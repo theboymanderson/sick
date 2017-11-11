@@ -3,12 +3,14 @@ Create an account below to sign up for health updates and to leave a get well me
 <%= form_for User.new do |f| %>
     <br> Name -- Use a fake one, it'll be funny :p
     <br> <%= f.text_field :name %>
+    <br>
     <br> Email -- <strong>The boy</strong> is gonna make you confirm this
     <br> <%= f.text_field :email %>
+    <br>
     <br> Password -- Fear not, <strong>the boy</strong> is encrypting the stored passwords so he won't see it and change you fb prof pic.
-    <br> <%= f.text_area :password %>
+    <br> <%= f.text_field :password %>
     <br> Password Confirm
-    <br> <%= f.text_area :password_confirmation %>
+    <br> <%= f.text_field :password_confirmation %>
     <br>
     <br> <%= f.submit "Let's do it" %>
 <% end %>
