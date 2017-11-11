@@ -3,4 +3,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :get_well_messages, only: :index
+
+  resources :users, only: :create do
+    collection do
+      get :sign_up
+    end
+    member do
+      get :confirm_email
+    end
+  end
 end

@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111050147) do
+ActiveRecord::Schema.define(version: 20171111052756) do
 
   create_table "get_well_messages", force: :cascade do |t|
     t.text "message"
     t.string "user"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.string "password_digest"
+    t.boolean "email_confirmed"
+    t.string "confirm_token"
   end
 
 end

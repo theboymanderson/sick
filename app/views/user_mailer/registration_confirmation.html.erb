@@ -1,0 +1,7 @@
+Well hello <%= @user.name %>,
+
+Honestly, means a lot that you want to hear about how <strong>the boy</strong> is doing!
+
+You've gotten emails like this. You know what to do.
+
+<%= link_to "Slap me with your mouse to confirm", confirm_email_user_url(@user.confirm_token) %>
