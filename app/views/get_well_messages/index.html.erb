@@ -1,7 +1,23 @@
+Here's the form, but you gotta create an account first:
+<%= form_for GetWellMessage.new do |f| %>
+    <%= f.fields_for :user do |user_fields| %>
+        <br> Email&ensp;&ensp;&ensp; : <%= user_fields.text_field :email %>
+        <br> Password : <%= user_fields.text_field :password, type: 'password' %>
+    <% end %>
+    <br><br>Your message
+    <br><%= f.text_area :message, size: '40x10' %>
+
+    <br><br> <%= f.submit 'Wish him nothing but the best :)' %>
+
+<% end %>
+<br><br><br>
 <% if @messages.present? %>
   <% @messages.each do |message| %>
-      <%= message %>
+      "<%= message.message %>"
+      <br>
+      &emsp; -- <%= message.user.name %> on <%= message.created_at.strftime("%B %e") %>
+      <br><br>
   <% end %>
 <% else %>
-  Functionality to add a message coming soon :)
+  No one has left a message yet :/
 <% end %>
