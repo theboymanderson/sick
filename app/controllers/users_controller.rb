@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
-      flash[:notice] = 'You know the drill. Go confirm your email address'
+      # UserMailer.registration_confirmation(@user).deliver
+      flash[:notice] = "You got lucky. I haven't implemented email confirmation yet. Enjoy FULL ACCESS BBY"
       redirect_to root_url
     else
       flash[:alert] = 'Well, shit. Either you or the boy messed up and something went wrong :('
