@@ -1,0 +1,2 @@
+class GetWellMessage < ApplicationRecord
+end
