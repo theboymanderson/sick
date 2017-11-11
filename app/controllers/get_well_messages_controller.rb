@@ -5,7 +5,7 @@ class GetWellMessagesController < ApplicationController
 
   def create
     password = params[:get_well_message][:user][:password]
-    email = params[:get_well_message][:user][:email]
+    email = params[:get_well_message][:user][:email].downcase
     message = params[:get_well_message][:message]
     user = User.find_by_email(email)
     if user.authenticate(password)

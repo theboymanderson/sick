@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def create
-    @user = User.new(user_params)
+    @user = User.new(
+                    name: params[:user][:name],
+                    email: params[:user][:email].downcase,
+                    password: params[:user][:password],
+                    password_confirmation: params[:user][:password_confirmation],
+    )
     if @user.save
       # UserMailer.registration_confirmation(@user).deliver
       flash[:notice] = "You got lucky. I haven't implemented email confirmation yet. Enjoy FULL ACCESS BBY"
