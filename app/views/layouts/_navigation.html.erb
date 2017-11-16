@@ -1,6 +1,6 @@
 <ul class="nav">
-  <li><%= link_to "How's the boy doin?", root_path %></li>
-  <li><%= link_to 'Leave a get well message', get_well_messages_path %></li>
-  <li><%= link_to 'Sign me up bby', sign_up_users_path %></li>
+  <li><%= link_to image_tag('the-boy-icon.png', border: 0, style: 'max-height: 34px; max-width: 34px; vertical-align: bottom;'), root_path %></li>
+  <li><%= link_to 'Leave a get well message', get_well_messages_path, class: 'nav_link' %></li>
+  <li><%= link_to 'Sign me up bby', sign_up_users_path, class: 'nav_link' %></li>
   <%= render 'layouts/navigation_links' %>
 </ul>
